@@ -1,7 +1,7 @@
 import express from "express";
 import { doubleCsrf } from "csrf-csrf";
 import cookieParser from "cookie-parser";
-
+import cors from 'cors'
 import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +15,7 @@ const COOKIES_SECRET = "super cookie secret";
 const CSRF_COOKIE_NAME = "x-csrf-token";
 
 const app = express();
+app.use(cors('*'));
 app.use(express.json());
 
 // These settings are only for local development testing.
