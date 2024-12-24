@@ -15,7 +15,7 @@ const COOKIES_SECRET = "super cookie secret";
 const CSRF_COOKIE_NAME = "x-csrf-token";
 
 const app = express();
-app.use(cors('*'));
+app.use(cors({origin:"http://127.0.0.1:5500"}));
 app.use(express.json());
 
 // These settings are only for local development testing.
