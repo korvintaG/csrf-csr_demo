@@ -14,10 +14,10 @@
     // Open this file only on the WEB server. 
     // Do not open as a file in a regular browser! It won't work!
     // ***************************************************************
-    
+
     // Don't forget to change the port if the server uses another one.
     const PORT = 3000;
-    const response = await fetch(`http://127.0.0.1:${PORT}/csrf-token`);
+    const response = await fetch(`http://127.0.0.1:${PORT}/csrf-token`,{credentials:"include"});
     const { token } = await response.json();
     console.log("the token", token);
 
